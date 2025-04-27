@@ -18,3 +18,10 @@ body {
 h1 {
     color: #333;
 }
+
+#game-container canvas {
+    /* Asegura que el canvas no tenga márgenes extraños */
+    display: block;
+    /* Centrar si es necesario */
+    /* margin: 0 auto; */
+}
