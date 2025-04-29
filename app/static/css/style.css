@@ -1,27 +1,47 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif; /* Ejemplo con Google Font */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
+    background: linear-gradient(to bottom, #283e51, #0a2035); /* Ejemplo de gradiente */
+    color: #ffffff; /* Texto blanco si el fondo es oscuro */
+    min-height: 100vh; /* Para que el gradiente cubra toda la pantalla */
 }
 
 #game-container {
-    /* Define el tamaño del lienzo de tu juego aquí o en Phaser */
-    border: 1px solid #ccc;
-    /* Centrar si tiene tamaño fijo */
+    /* ... tus estilos existentes para el contenedor del juego ... */
+    border: 8px solid #ff6b6b;
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.8);
+    border-radius: 15px;
     margin-top: 20px;
+    overflow: hidden;
+    background-color: #1d212d;
+
+    /* --- NUEVA PROPIEDAD para el cursor --- */
+    /* La ruta es relativa desde style.css (en static/css) hasta hammer.png (en static/assets) */
+    cursor: url('../assets/martillo.png') 16 16, auto;
+    /* Si la ruta relativa no funciona, prueba la ruta absoluta desde la raíz web: */
+    /* cursor: url('/static/assets/hammer.png'), auto; */
+
+    /* Opcional: Si quieres un puntero normal sobre elementos clickeables dentro del juego */
+    /* cursor: pointer;  <-- Esto es para un puntero genérico, no la imagen del martillo */
 }
+
+/* Mantén los estilos para el canvas si los tienes */
+#game-container canvas {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* ... el resto de tus estilos (body, h1, etc.) ... */
 
 h1 {
-    color: #333;
-}
-
-#game-container canvas {
-    /* Asegura que el canvas no tenga márgenes extraños */
-    display: block;
-    /* Centrar si es necesario */
-    /* margin: 0 auto; */
+    color: #4ecdc4; /* Un color contrastante */
+    margin-bottom: 30px; /* Más espacio debajo del título */
+    font-size: 3em;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+    /* Opcional: Si usaste Google Fonts en el body, el h1 también la usará a menos que la cambies aquí */
 }
